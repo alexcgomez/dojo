@@ -27,8 +27,10 @@ class AddTwoNumbersTest {
     private void assertLinkedListEquals(@NotNull ListNode expected, @NotNull ListNode actual) {
         do {
             assertEquals(expected.val, actual.val);
+            if (actual.hasNext()) {
+                actual = actual.next;
+            }
             expected = expected.next;
-            actual = actual.next;
         } while (expected != null);
     }
 
@@ -44,7 +46,7 @@ class AddTwoNumbersTest {
     }
 
     @Test
-    void ShouldReturnListNodeWhenListNodeInputAreSameSize() {
+    void ShouldReturnExpectedListNodeWhenListNodeInputAreSameSize() {
         ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
         ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
 

@@ -18,4 +18,8 @@ public class ListNode {
         this.val = val;
         this.next = next;
     }
+
+    boolean hasNext() {
+        return this.next != null;
+    }
 }
