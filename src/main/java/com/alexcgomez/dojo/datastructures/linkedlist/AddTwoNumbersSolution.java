@@ -2,8 +2,6 @@ package com.alexcgomez.dojo.datastructures.linkedlist;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-
 /**
  * https://leetcode.com/problems/add-two-numbers/
  */
@@ -18,18 +16,17 @@ public class AddTwoNumbersSolution {
 
         for (int i = 0; i < resultSize; i++) {
             if (i < l1Array.length) {
-                if (i < l2Array.length){
+                if (i < l2Array.length) {
                     result[i] += l2Array[i] + l1Array[i];
                     if (result[i] >= 10) {
-                            result[i] = 0;
-                            if (i+1 == resultSize){
-                                result[i] = 1;
-                            } else {
-                                result[i+1] = 1;
-                            }
+                        result[i] = 0;
+                        if (i + 1 == resultSize) {
+                            result[i] = 1;
+                        } else {
+                            result[i + 1] = 1;
+                        }
                     }
-                }
-                else {
+                } else {
                     result[i] += l1Array[i];
                 }
             } else {
@@ -47,12 +44,12 @@ public class AddTwoNumbersSolution {
         temp.next = root;
         root = temp;
         return root;
-    };
+    }
 
     private ListNode toListNode(int[] array) {
         ListNode listNode = new ListNode();
 
-        for (int i = array.length - 1; i >= 0 ; i--) {
+        for (int i = array.length - 1; i >= 0; i--) {
             listNode = insert(listNode, array[i]);
         }
         return listNode;
