@@ -3,8 +3,9 @@ package com.alexcgomez.dojo.algorithms;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class LinearSearch {
+public class LinearSearch implements SearchAlgorithm {
 
+    @Override
     public Integer search(ArrayList<Integer> inputArray, Integer target) {
 
         for (int i = 0; i < inputArray.size(); i++) {
